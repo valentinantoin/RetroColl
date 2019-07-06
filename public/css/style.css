@@ -1,0 +1,25 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    background-color: #212529;
+    color: white;
+    padding-top: 10rem;
+}
+
+.nes-container {
+    width: 100%;
+}
+
+.navbar {
+    padding: 0;
+}
+
+figure {
+    text-align: center;
+    margin: 2rem;
+}
+
+p {
+    text-align: justify;
+    margin: 2rem;
+}
