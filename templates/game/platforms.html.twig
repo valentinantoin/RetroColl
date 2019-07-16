@@ -10,8 +10,18 @@
     
     {% include 'menu.html.twig'%}
 
-    <div>
+    <div class="flex tab">
+    {% for platform in platforms %}
+
+    <div class="nes-container is-dark with-title is-centered" id="platform">
+        <a href="" class="title">{{platform.name}}</a>
+        <img src="img/platform/{{platform.img}}" class="logo" alt="Logo {{ platform.name }}">
+        
     </div>
+
+    {% endfor %}
+    </div>
+
 </section>
 
 {% endblock %}
