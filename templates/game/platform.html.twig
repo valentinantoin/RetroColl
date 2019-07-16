@@ -19,4 +19,27 @@
 
     </section>
 
+    <section class="ml">
+        <div class="nes-container is-rounded is-dark">
+            <table>
+                <thead>
+                <tr>
+                    <th>Titre dispo sur la console</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for game in games %}
+
+                    <tr>
+                        <td><a href="">{{ game.name }}</a></td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
 {% endblock %}
