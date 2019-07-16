@@ -25,6 +25,7 @@ p {
 }
  h1 {
      margin: 2rem;
+     text-align: center;
  }
 
  .flex {
@@ -43,4 +44,8 @@ p {
 .tab {
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.img {
+    width: 40%;
 }

@@ -6,6 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Platform;
 
+/**
+ * Class GameController
+ * @package App\Controller
+ */
 class GameController extends AbstractController
 {
     /**
@@ -26,6 +30,19 @@ class GameController extends AbstractController
     
         return $this->render('game/platforms.html.twig', [
             'platforms' => $platforms
+        ]);
+    }
+
+    /**
+     * @Route("/platform/{id}", name="platform")
+     */
+    public function platform($id)
+    {
+        $repo=$this->getDoctrine()->getRepository(Platform::class);
+        $platform=$repo->find($id);
+
+        return $this->render('game/platform.html.twig', [
+           'platform' => $platform
         ]);
     }
 }

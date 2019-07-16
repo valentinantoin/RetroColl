@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Jeux' %}
+{% block title 'Par console' %}
 
 {% block body %}
 
@@ -14,7 +14,7 @@
     {% for platform in platforms %}
 
     <div class="nes-container is-dark with-title is-centered" id="platform">
-        <a href="" class="title">{{platform.name}}</a>
+        <a href="{{ path('platform', {'id': platform.id}) }}" class="title">{{platform.name}}</a>
         <img src="img/platform/{{platform.img}}" class="logo" alt="Logo {{ platform.name }}">
         
     </div>

@@ -1,17 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title 'Jeux' %}
+{% block title %}{{ platform.name }}{% endblock %}
 
 {% block body %}
 
-<h1 class="nes-text is-success">Toutes les consoles disponibles</h1>
+    <section class="flex">
 
-<section class="flex">
-    
-    {% include 'menu.html.twig'%}
+        {% include 'menu.html.twig'%}
 
-    <div>
-    </div>
-</section>
+        <div>
+            <h1 class="nes-text is-success">{{ platform.name }}</h1>
+            <figure>
+                <img src="../img/platform/{{ platform.img }}" alt="Logo {{ platform.name }}" class="img"/>
+            </figure>
+            <p>{{ platform.presentation }}</p>
+        </div>
+
+    </section>
 
 {% endblock %}
