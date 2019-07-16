@@ -30,3 +30,17 @@ p {
  .flex {
      display: flex;
  }
+
+.logo {
+    width: 60%;
+}
+
+#platform {
+    width: 45%;
+    margin-bottom: 2rem;
+}
+
+.tab {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
