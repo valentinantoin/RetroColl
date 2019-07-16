@@ -27,7 +27,7 @@ class GameController extends AbstractController
     public function games()
     {
         $repo=$this->getDoctrine()->getRepository(Game::class);
-        $games=$repo->findAll();
+        $games=$repo->findBy(array(), array('name' => 'ASC'));
 
         return $this->render('game/games.html.twig', [
             'games' => $games
@@ -52,11 +52,15 @@ class GameController extends AbstractController
      */
     public function platform($id)
     {
-        $repo=$this->getDoctrine()->getRepository(Platform::class);
-        $platform=$repo->find($id);
+        $repoPlatform=$this->getDoctrine()->getRepository(Platform::class);
+        $platform=$repoPlatform->find($id);
+
+        $repoGame=$this->getDoctrine()->getRepository(Game::class);
+        $games=$repoGame->findBy(['platform' => $id]);
 
         return $this->render('game/platform.html.twig', [
-           'platform' => $platform
+           'platform' => $platform,
+            'games' => $games
         ]);
     }
 }
