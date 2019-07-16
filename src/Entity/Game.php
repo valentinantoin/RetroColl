@@ -19,10 +19,11 @@ class Game
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $title;
+    private $name;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Platform", inversedBy="games")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $platform;
 
@@ -31,29 +32,34 @@ class Game
      */
     private $img;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $presentation;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getName(): ?string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function setTitle(string $title): self
+    public function setName(string $name): self
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getPlatform(): ?string
+    public function getPlatform(): ?Platform
     {
         return $this->platform;
     }
 
-    public function setPlatform(string $platform): self
+    public function setPlatform(?Platform $platform): self
     {
         $this->platform = $platform;
 
@@ -68,6 +74,18 @@ class Game
     public function setImg(?string $img): self
     {
         $this->img = $img;
+
+        return $this;
+    }
+
+    public function getPresentation(): ?string
+    {
+        return $this->presentation;
+    }
+
+    public function setPresentation(?string $presentation): self
+    {
+        $this->presentation = $presentation;
 
         return $this;
     }
