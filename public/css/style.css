@@ -30,6 +30,7 @@ p {
 
  .flex {
      display: flex;
+     justify-content: space-around;
  }
 
 .logo {
@@ -51,5 +52,9 @@ p {
 }
 
 #menu {
-    width: 20%;
+width: 20%;
+}
+
+td {
+    padding: 0.7rem;
 }
