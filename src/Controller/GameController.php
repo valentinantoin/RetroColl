@@ -14,11 +14,11 @@ use App\Entity\Platform;
 class GameController extends AbstractController
 {
     /**
-     * @Route("/game", name="game")
+     * @Route("/home", name="home")
      */
     public function index()
     {
-        return $this->render('game/game.html.twig');
+        return $this->render('game/home.html.twig');
     }
 
     /**
@@ -31,6 +31,19 @@ class GameController extends AbstractController
 
         return $this->render('game/games.html.twig', [
             'games' => $games
+        ]);
+    }
+
+    /**
+     * @Route("/game/{id}", name="game")
+     */
+    public function game($id)
+    {
+        $repo=$this->getDoctrine()->getRepository(Game::class);
+        $game=$repo->find($id);
+
+        return $this->render('game/game.html.twig', [
+           'game' => $game
         ]);
     }
 

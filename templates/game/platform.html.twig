@@ -32,7 +32,7 @@
                 {% for game in games %}
 
                     <tr>
-                        <td><a href="">{{ game.name }}</a></td>
+                        <td><a href="{{ path('game', {'id': game.id}) }}">{{ game.name }}</a></td>
                     </tr>
 
                 {% endfor %}
